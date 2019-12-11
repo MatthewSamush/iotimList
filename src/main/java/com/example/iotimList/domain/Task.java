@@ -8,18 +8,18 @@ import javax.persistence.Id;
 @Entity
 public class Task {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     private String task;
-    private String tag;
+    private String status;
 
     public Task() {
     }
 
-    public Task(String task, String tag) {
+    public Task(String task, String status) {
         this.task = task;
-        this.tag = tag;
+        this.status = status;
     }
 
     public void setTask(String task){
@@ -39,10 +39,10 @@ public class Task {
     }
 
     public String getTag() {
-        return tag;
+        return status;
     }
 
-    public void setTag(String tag) {
-        this.tag = tag;
+    public void setTag(String status) {
+        this.status = status;
     }
 }

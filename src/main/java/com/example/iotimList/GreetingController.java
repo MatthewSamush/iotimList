@@ -25,15 +25,15 @@ public class GreetingController {
     @GetMapping
     public String main(Map<String , Object> model){
         Iterable<Task> tasks = taskRepos.findAll();
-
         model.put("tasks",tasks);
         return "main";
     }
 
     @PostMapping
-    public String add(@RequestParam String text, @RequestParam String tag, Map<String , Object> model){
-        Task task = new Task(text,tag);
-        taskRepos.save(task);
+    public String add(@RequestParam String task,@RequestParam String status, Map<String,Object> model){
+
+        Task newTask = new Task(task,status);
+        taskRepos.save(newTask);
 
         Iterable<Task> tasks = taskRepos.findAll();
         model.put("tasks",tasks);
