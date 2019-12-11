@@ -1,0 +1,22 @@
+<html>
+    <body>
+        <div>
+            <form method="post">
+                <input type="text" placeholder="Create your new Task">
+                <input type="text" placeholder="Set the status of the progress">
+                <button type="submit">Create</button>
+                <button type="reset">Cancel</button>
+            </form>
+            <div>
+                Iotim TaskList
+            </div>
+            {{#tasks}}
+                <div>
+                    <b>{{id}}</b>
+                    <span>{{task}}</span>
+                    <i>{{tag}}</i>
+                </div>
+            {{/tasks}}
+        </div>
+    </body>
+<html>
