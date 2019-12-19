@@ -1,0 +1,73 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+
+#appBlock{
+	width:1200px;
+	height:960px;
+	margin:auto;
+	margin-top:300px;
+}
+
+
+.inputBlock{
+	height:960px;
+	width:300px;
+	display: inline-block;
+	margin-left:0px;
+	background-color: #C4C4C4;
+	text-align: center;
+}
+.inputBlock .formInputs{
+	margin-left:5px;
+}
+.inputBlock .formInputs button{
+	margin-left:5px;
+}
+.inputBlock h1 {
+	color:red;
+}
+
+.taskListBlock{
+	height:960px;
+	width:900px;
+	margin:0px;
+	padding: 0px;
+}
+	.filterBlock{
+		margin-top: 20px;
+		font-size:40px;
+	}
+
+.theTaskBlock{
+	height:960px;
+	width:900px;
+	display:inline-block;
+	padding: 0px;
+}
+
+
+/*
+
+Buttons Style
+
+
+*/
+
+.addTaskBtn{
+	width:100px;
+	height:40px;
+}
+#addBtn{
+	background-color:#5ACD65;
+}
+#refreshBtn{
+	background-color:#CD5A5A;
+}
+
+/*
+
+//End
+
+*/
