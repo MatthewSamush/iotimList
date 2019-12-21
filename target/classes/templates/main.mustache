@@ -1,24 +1,41 @@
 <html>
-
+<head>
+    <title>iotimTaskList</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
 <body>
-<div>
-    <form method="post">
-        <input type="text" name="task" placeholder="Write your task" />
-        <input type="text" name="status" placeholder="Priority">
-        <button type="submit">Add Task</button>
+<div id="appBlock">
+<div class="inputBlock">
+    <h1>Add your task here</h1>
+    <form method="post" id="taskCreator">
+        <input class="nameInput formInputs" type="text" name="task" placeholder="Write your task">
+        <select class="formSelector formInputs" name="status" form="taskCreator">
+              <option value="Done">Done</option>
+              <option value="Stuck">Stuck</option>
+              <option value="Waiting">Waiting</option>
+              <option value="In Progress">In Progress</option>
+        </select><br>
+        <button class="addTaskBtn" id="addBtn" type="submit">Add Task</button>
+        <button class="addTaskBtn" id="refreshBtn" type="reset">Refresh</button>
     </form>
 </div>
-<div>Список сообщений</div>
-<form method="post" action="filter">
-    <input type="text" name="filter">
-    <button type="submit">Find</button>
-</form>
-{{#myTasks}}
-<div>
-    <b>{{id}}</b>
-    <span>{{task}}</span>
-    <i>{{status}}</i>
+        <div class="taskListBlock">
+            <div class="filterBlock">
+                <h2>Task List</h2>
+                <form id="filterForm" method="post" action="filter">
+                    <p>Filter tasks by status:</p>
+                    <input class="formInput" type="text" name="filter">
+                    <button id="filterBtn" type="submit">Find</button>
+                </form>
+            </div>
+            {{#myTasks}}
+            <div class="theTaskBlock">
+                <div class="taskConstructor idBlock"><b class="idText">{{id}}</b></div>
+                <div class="taskConstructor taskBlock"><span class="taskText">{{task}}</span></div>
+                <div class="taskConstructor statusBlock"><span class="statusText">{{status}}</span></div>
+            </div>
+            {{/myTasks}}
+        </div>
 </div>
-{{/myTasks}}
 </body>
 </html>
