@@ -1,5 +1,6 @@
-package com.example.iotimList;
+package com.example.iotimList.controller;
 
+import com.example.iotimList.TaskService;
 import com.example.iotimList.domain.Task;
 import com.example.iotimList.repos.TaskRepos;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,20 +18,24 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
-public class GreetingController {
+public class MainController {
     @Autowired
     private TaskService taskService;
 
-    @GetMapping
-    public String main(Map<String,Object> model){
-        Iterable<Task> task = taskService.getAllTasks();
+    @GetMapping("/")
+    public String start(Map<String, Object> model){
+        return "start";
+    }
 
-        model.put("task",task);
+    @GetMapping("/main")
+    public String main(Map<String,Object> model){
+        Iterable<Task> tasks = taskService.getAllTasks();
+        model.put("myTasks",tasks);
         return "main";
     }
 
 
-    @PostMapping
+    @PostMapping("/main")
     public String addTask(String task,String status,Map<String,Object> model) {
         taskService.addTask(task,status);
         Iterable<Task> tasks = taskService.getAllTasks();

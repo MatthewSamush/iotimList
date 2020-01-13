@@ -4,10 +4,15 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
+<form action="/logout" method="post">
+    <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+    <input type="submit" value="Sign Out"/>
+</form>
 <div id="appBlock">
 <div class="inputBlock">
     <h1>Add your task here</h1>
     <form method="post" id="taskCreator">
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
         <input class="nameInput formInputs" type="text" name="task" placeholder="Write your task">
         <select class="formSelector formInputs" name="status" form="taskCreator">
               <option value="Done">Done</option>
@@ -24,6 +29,7 @@
                 <h2>Task List</h2>
                 <form id="filterForm" method="post" action="filter">
                     <p>Filter tasks by status:</p>
+                    <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
                     <input class="formInput" type="text" name="filter">
                     <button id="filterBtn" type="submit">Find</button>
                 </form>
@@ -32,7 +38,7 @@
             <div class="theTaskBlock">
                 <div class="taskConstructor idBlock"><b class="idText">{{id}}</b></div>
                 <div class="taskConstructor taskBlock"><span class="taskText">{{task}}</span></div>
-                <div class="taskConstructor statusBlock"><span class="statusText">{{status}}</span></div>
+                <div class="taskConstructor statusBlock"><span class="statusText{{id}}">{{status}}</span></div>
             </div>
             {{/myTasks}}
         </div>

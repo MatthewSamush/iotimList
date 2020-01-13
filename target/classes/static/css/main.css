@@ -44,7 +44,7 @@
 
 .taskListBlock{
 	height:760px;
-	width:800px;
+	width:760px;
 	margin:0px;
 	padding: 0px;
 	display: inline-block;
@@ -74,9 +74,9 @@
 
 .theTaskBlock{
 	height:50px;
-	width:720px;
+	width:710px;
 	display:inline-block;
-	padding-top:20px;
+	padding-top:20px;	
 	padding-left:20px;
 }
 .taskConstructor {

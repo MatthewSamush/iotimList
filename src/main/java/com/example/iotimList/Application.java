@@ -12,13 +12,8 @@ import static com.samskivert.mustache.Mustache.*;
 @SpringBootApplication
 public class Application {
 
-    @Bean
-    public Mustache.Compiler mustacheCompiler(TemplateLoader loader) {
-        return compiler().escapeHTML(false).withLoader(loader);
-    }
-
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(Application.class , args);
     }
 
 }

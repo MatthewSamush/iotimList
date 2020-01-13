@@ -18,6 +18,7 @@ public class TaskService {
     public Iterable<Task> getAllTasks(){
         return taskRepos.findAll();
     }
+
     public Iterable<Task> filterTasks(String filter){
         Iterable<Task> filteredList;
         if(filter !=null && !filter.isEmpty()){
